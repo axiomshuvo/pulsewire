@@ -1,10 +1,25 @@
-import Navbar from "./Navbar";
+import logoImg from "@/assets/logo.png";
+import { format } from "date-fns";
+import Image from "next/image";
+// const formattedDate = new Date().toLocaleDateString("en-US", {
+//   weekday: "long",
+//   year: "numeric",
+//   month: "long",
+//   day: "numeric",
+// });
 
 export default function Header() {
   return (
-    <div>
-      Header
-      <Navbar />
+    <div className="flex flex-col items-center justify-center gap-2 py-10">
+      <Image
+        src={logoImg}
+        alt="PulseWire"
+        width={300}
+        height={200}
+        style={{ width: "300px", height: "auto" }}
+      />
+      <p>Journalism Without Fear or Favour</p>
+      <h5>{format(new Date(), "EEEE, MMMM d, yyyy")}</h5>
     </div>
   );
 }
