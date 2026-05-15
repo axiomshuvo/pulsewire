@@ -10,13 +10,13 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <div className="flex flex-col items-center justify-center gap-2 py-10">
+    <div className="flex flex-col items-center justify-center gap-2">
       <Image
         src={logoImg}
         alt="PulseWire"
-        width={300}
+        width={250}
         height={200}
-        style={{ width: "300px", height: "auto" }}
+        style={{ width: "250px", height: "auto" }}
       />
       <p>Journalism Without Fear or Favour</p>
       <h5>{format(new Date(), "EEEE, MMMM d, yyyy")}</h5>

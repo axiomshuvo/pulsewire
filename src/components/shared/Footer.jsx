@@ -152,7 +152,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-500">
           <p>&copy; {currentYear} PulseWire. All rights reserved.</p>
           <p>
-            Made with care for independent journalism.{" "}
+            Made with care by{"   "}
             <a
               href="https://github.com/axiomshuvo"
               target="_blank"

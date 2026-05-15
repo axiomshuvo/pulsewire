@@ -5,12 +5,12 @@ import Navbar from "@/components/shared/Navbar";
 
 export default function MainLayout({ children }) {
   return (
-    <>
+    <div className=" pt-10 min-h-screen">
       <Header />
       <BreakingNews />
       <Navbar />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }
