@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "About PulseWire",
+  description:
+    "Learn about PulseWire, our mission, editorial values, newsroom history, and the journalists behind our independent reporting.",
+};
+
 const stats = [
   { value: "2019", label: "Founded" },
   { value: "4.2M+", label: "Monthly Readers" },
@@ -99,58 +105,58 @@ const team = [
     role: "Editor-in-Chief",
     bio: "20 years covering conflict zones and international politics. Pulitzer finalist, 2021.",
     initial: "AO",
-    color: "bg-blue-100 text-blue-700",
+    color: "bg-[#f6dfd8] text-[#aa5641]",
   },
   {
     name: "Marcus Rivera",
     role: "Investigative Lead",
     bio: "Former financial analyst turned journalist. Specializes in corporate accountability reporting.",
     initial: "MR",
-    color: "bg-emerald-100 text-emerald-700",
+    color: "bg-[#ece5d6] text-[#7d6346]",
   },
   {
     name: "Priya Nair",
     role: "Technology Editor",
     bio: "Covers AI, data privacy, and the impact of Big Tech on democracy and society.",
     initial: "PN",
-    color: "bg-purple-100 text-purple-700",
+    color: "bg-[#ece6ef] text-[#6c5b78]",
   },
   {
     name: "James Calloway",
     role: "Politics Correspondent",
     bio: "Based in Washington D.C. with 15 years of Capitol Hill and White House reporting.",
     initial: "JC",
-    color: "bg-amber-100 text-amber-700",
+    color: "bg-[#f4e8d3] text-[#966735]",
   },
   {
     name: "Sofia Mensah",
     role: "Climate Reporter",
     bio: "Award-winning environmental journalist covering the frontlines of the global climate crisis.",
     initial: "SM",
-    color: "bg-teal-100 text-teal-700",
+    color: "bg-[#deece5] text-[#4d6a5d]",
   },
   {
     name: "Ryo Tanaka",
     role: "Asia-Pacific Bureau Chief",
     bio: "Tokyo-based correspondent with deep expertise in geopolitics across East and Southeast Asia.",
     initial: "RT",
-    color: "bg-rose-100 text-rose-700",
+    color: "bg-[#f4dfdf] text-[#8d5252]",
   },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="pb-16">
+    <div className="pb-16 text-[#241d1a]">
       {/* Hero */}
-      <section className="bg-linear-to-b from-gray-900 to-gray-800 text-white py-20 px-4">
+      <section className="bg-[linear-gradient(180deg,#241d1a_0%,#342822_100%)] px-4 py-20 text-white">
         <div className="container mx-auto max-w-3xl text-center">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-400 border border-blue-400/40 rounded-full px-3 py-1 mb-5">
+          <span className="mb-5 inline-block rounded-full border border-[#ff6b57]/25 bg-[#ff6b57]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff9f92]">
             About Us
           </span>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
             Journalism Without Fear or Favour
           </h1>
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-lg leading-relaxed text-[#d7cbc4]">
             PulseWire was founded on a single belief: the public deserves
             honest, independent reporting. We cover what matters — from local
             communities to global crises — with rigour, empathy, and an
@@ -160,9 +166,9 @@ export default function AboutPage() {
       </section>
 
       {/* Stats bar */}
-      <section className="border-b border-gray-200">
+      <section className="border-b border-[#eadfd4] bg-white/55 backdrop-blur">
         <div className="container mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-gray-200">
+          <div className="grid grid-cols-2 divide-x divide-y divide-[#eadfd4] md:grid-cols-4 md:divide-y-0">
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -171,7 +177,7 @@ export default function AboutPage() {
                 <span className="text-4xl font-bold text-gray-900">
                   {stat.value}
                 </span>
-                <span className="mt-1 text-sm text-gray-500 uppercase tracking-wide">
+                <span className="mt-1 text-sm uppercase tracking-wide text-[#7a6c65]">
                   {stat.label}
                 </span>
               </div>
@@ -184,62 +190,64 @@ export default function AboutPage() {
       <section className="container mx-auto max-w-5xl px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-5">Our Story</h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <h2 className="mb-5 text-3xl font-bold text-[#241d1a]">
+              Our Story
+            </h2>
+            <p className="mb-4 leading-relaxed text-[#6c5f58]">
               PulseWire started in 2019 as a small investigative desk with five
               journalists determined to cut through noise and hold power
               accountable. Our first major exposé — a series on municipal
               corruption — won regional recognition and proved that independent
               journalism could still make an impact.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Today, we've grown into a global newsroom with correspondents
-              across six continents. But our DNA hasn't changed. We still
+            <p className="mb-4 leading-relaxed text-[#6c5f58]">
+              Today, we&apos;ve grown into a global newsroom with correspondents
+              across six continents. But our DNA hasn&apos;t changed. We still
               operate as an independent publication funded by reader
               subscriptions — never by government or corporate grants with
               strings attached.
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="leading-relaxed text-[#6c5f58]">
               Our revenue model is simple: readers who believe in independent
               journalism support the work. This keeps our reporting beholden to
               no one but the truth.
             </p>
           </div>
-          <div className="bg-gray-50 border border-gray-100 rounded-lg p-8 space-y-5">
+          <div className="space-y-5 rounded-[28px] border border-[#ecdfd4] bg-[#fffaf5] p-8 shadow-[0_24px_70px_-55px_rgba(36,29,26,0.4)]">
             <div className="flex gap-4 items-start">
-              <span className="text-blue-600 font-bold text-lg min-w-12">
+              <span className="min-w-12 text-lg font-bold text-[#ff6b57]">
                 2019
               </span>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-[#5e534d]">
                 Founded in New York City with a five-person investigative team.
               </p>
             </div>
-            <div className="border-t border-gray-200" />
+            <div className="border-t border-[#eadfd4]" />
             <div className="flex gap-4 items-start">
-              <span className="text-blue-600 font-bold text-lg min-w-12">
+              <span className="min-w-12 text-lg font-bold text-[#ff6b57]">
                 2021
               </span>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-[#5e534d]">
                 Expanded to international coverage with bureaus in London and
                 Nairobi.
               </p>
             </div>
-            <div className="border-t border-gray-200" />
+            <div className="border-t border-[#eadfd4]" />
             <div className="flex gap-4 items-start">
-              <span className="text-blue-600 font-bold text-lg min-w-12">
+              <span className="min-w-12 text-lg font-bold text-[#ff6b57]">
                 2023
               </span>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-[#5e534d]">
                 Launched reader-supported model; hit 1 million active
                 subscribers.
               </p>
             </div>
-            <div className="border-t border-gray-200" />
+            <div className="border-t border-[#eadfd4]" />
             <div className="flex gap-4 items-start">
-              <span className="text-blue-600 font-bold text-lg min-w-12">
+              <span className="min-w-12 text-lg font-bold text-[#ff6b57]">
                 2026
               </span>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-sm leading-relaxed text-[#5e534d]">
                 4.2M+ monthly readers across 180 countries. Still independent.
               </p>
             </div>
@@ -248,13 +256,13 @@ export default function AboutPage() {
       </section>
 
       {/* Core Values */}
-      <section className="bg-gray-50 py-16 px-4">
+      <section className="bg-[#fbf6f1] px-4 py-16">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="mb-3 text-3xl font-bold text-[#241d1a]">
               Our Core Values
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
+            <p className="mx-auto max-w-xl text-[#6c5f58]">
               These principles guide every editorial decision we make — from
               which stories to pursue to how we present the facts.
             </p>
@@ -263,16 +271,16 @@ export default function AboutPage() {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="bg-white rounded-lg border border-gray-100 p-7 flex gap-5 items-start shadow-xs hover:shadow-sm transition-shadow"
+                className="flex items-start gap-5 rounded-[26px] border border-[#eadfd4] bg-white/88 p-7 shadow-[0_24px_70px_-55px_rgba(36,29,26,0.38)] transition hover:-translate-y-0.5"
               >
-                <div className="text-blue-600 shrink-0 mt-0.5">
+                <div className="mt-0.5 shrink-0 text-[#ff6b57]">
                   {value.icon}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
+                  <h3 className="mb-2 font-semibold text-[#241d1a]">
                     {value.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <p className="text-sm leading-relaxed text-[#6c5f58]">
                     {value.description}
                   </p>
                 </div>
@@ -285,10 +293,10 @@ export default function AboutPage() {
       {/* Team */}
       <section className="container mx-auto max-w-5xl px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="mb-3 text-3xl font-bold text-[#241d1a]">
             Meet the Newsroom
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="mx-auto max-w-xl text-[#6c5f58]">
             A team of experienced journalists, editors, and researchers united
             by a shared mission to inform the public.
           </p>
@@ -297,16 +305,16 @@ export default function AboutPage() {
           {team.map((member) => (
             <div
               key={member.name}
-              className="bg-white rounded-lg border border-gray-100 p-6 shadow-xs hover:shadow-sm transition-shadow"
+              className="rounded-[26px] border border-[#eadfd4] bg-white/88 p-6 shadow-[0_24px_70px_-55px_rgba(36,29,26,0.38)] transition hover:-translate-y-0.5"
             >
               <div
                 className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-lg mb-4 ${member.color}`}
               >
                 {member.initial}
               </div>
-              <h3 className="font-semibold text-gray-900">{member.name}</h3>
-              <p className="text-sm text-blue-600 mb-3">{member.role}</p>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <h3 className="font-semibold text-[#241d1a]">{member.name}</h3>
+              <p className="mb-3 text-sm text-[#ff6b57]">{member.role}</p>
+              <p className="text-sm leading-relaxed text-[#6c5f58]">
                 {member.bio}
               </p>
             </div>
@@ -315,12 +323,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-blue-600 py-16 px-4 text-white text-center">
+      <section className="bg-[#241d1a] px-4 py-16 text-center text-white">
         <div className="container mx-auto max-w-2xl">
           <h2 className="text-3xl font-bold mb-4">
             Support Independent Journalism
           </h2>
-          <p className="text-blue-100 mb-8 leading-relaxed">
+          <p className="mb-8 leading-relaxed text-[#d7cbc4]">
             PulseWire is reader-funded. Your support keeps our newsroom
             independent, our reporting fearless, and our content free from
             corporate influence.
@@ -328,13 +336,13 @@ export default function AboutPage() {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="/register"
-              className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-sm hover:bg-blue-50 transition-colors"
+              className="rounded-full bg-[#ff6b57] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#f25a45]"
             >
               Subscribe Now
             </a>
             <a
               href="/career"
-              className="border border-white/60 text-white font-semibold px-8 py-3 rounded-sm hover:bg-white/10 transition-colors"
+              className="rounded-full border border-white/20 bg-white/5 px-8 py-3 font-semibold text-white transition-colors hover:bg-white/10"
             >
               Join Our Team
             </a>

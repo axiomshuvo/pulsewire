@@ -5,7 +5,7 @@ import Navbar from "@/components/shared/Navbar";
 
 export default function MainLayout({ children }) {
   return (
-    <div className=" pt-10 min-h-screen">
+    <div className="min-h-screen bg-transparent pt-6">
       <Header />
       <BreakingNews />
       <Navbar />

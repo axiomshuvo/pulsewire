@@ -51,20 +51,25 @@ const newsItems = [
 
 export default function BreakingNews() {
   return (
-    <div className="container mx-auto my-4">
-      <div className="flex justify-between bg-gray-200 p-4 rounded-2xl items-center">
-        <Button variant="danger">Latest News</Button>
+    <div className="container mx-auto my-4 px-4">
+      <div className="flex flex-col gap-4 rounded-[26px] border border-white/70 bg-white/78 px-5 py-4 shadow-[0_24px_60px_-45px_rgba(36,29,26,0.45)] backdrop-blur md:flex-row md:items-center">
+        <Button
+          radius="full"
+          className="h-11 bg-[#241d1a] px-5 text-sm font-semibold text-white"
+        >
+          Latest News
+        </Button>
         <Marquee
-          direction="right"
-          speed={100}
+          speed={85}
           gradient={true}
-          gradientColor="#e5e7eb "
-          gradientWidth={50}
+          gradientColor="#fbf7f3"
+          gradientWidth={96}
           pauseOnHover={true}
-          className="cursor-pointer"
+          className="flex-1 cursor-pointer text-sm font-medium text-[#5f534d]"
         >
           {newsItems.map((news) => (
-            <span key={news.id} className="  mx-6">
+            <span key={news.id} className="mx-6 inline-flex items-center gap-3">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#ff6b57]" />
               {news.title}
             </span>
           ))}

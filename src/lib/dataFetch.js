@@ -19,3 +19,14 @@ export async function getNewsByCategory(categoryId) {
   const data = await res.json();
   return data.data;
 }
+
+export async function getNewsDetails(newsSlug) {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/news/${newsSlug}`,
+  );
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  const data = await res.json();
+  return data.data[0];
+}

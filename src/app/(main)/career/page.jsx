@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Careers at PulseWire",
+  description:
+    "Explore careers at PulseWire and join a global newsroom built around fearless journalism, editorial freedom, and meaningful reporting.",
+};
+
 const benefits = [
   {
     title: "Editorial Freedom",
@@ -173,38 +179,38 @@ const openings = [
 ];
 
 const departmentColors = {
-  Investigations: "bg-blue-50 text-blue-700",
-  Science: "bg-teal-50 text-teal-700",
-  Technology: "bg-purple-50 text-purple-700",
-  Multimedia: "bg-amber-50 text-amber-700",
-  Editorial: "bg-rose-50 text-rose-700",
+  Investigations: "bg-[#f6e7df] text-[#aa5641]",
+  Science: "bg-[#e5f0ea] text-[#4d6c5e]",
+  Technology: "bg-[#ebe6ef] text-[#6b5879]",
+  Multimedia: "bg-[#f4ead9] text-[#916437]",
+  Editorial: "bg-[#f3e0df] text-[#93585a]",
 };
 
 const typeColors = {
-  "Full-time": "bg-emerald-50 text-emerald-700",
-  Internship: "bg-orange-50 text-orange-700",
+  "Full-time": "bg-[#e5efe7] text-[#526a58]",
+  Internship: "bg-[#f5e7d8] text-[#936239]",
 };
 
 export default function CareerPage() {
   return (
-    <div className="pb-16">
+    <div className="pb-16 text-[#241d1a]">
       {/* Hero */}
-      <section className="bg-linear-to-b from-gray-900 to-gray-800 text-white py-20 px-4">
+      <section className="bg-[linear-gradient(180deg,#241d1a_0%,#342822_100%)] px-4 py-20 text-white">
         <div className="container mx-auto max-w-3xl text-center">
-          <span className="inline-block text-xs font-semibold tracking-widest uppercase text-blue-400 border border-blue-400/40 rounded-full px-3 py-1 mb-5">
+          <span className="mb-5 inline-block rounded-full border border-[#ff6b57]/25 bg-[#ff6b57]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-[#ff9f92]">
             Careers
           </span>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
             Do the Most Important Work of Your Career
           </h1>
-          <p className="text-lg text-gray-300 leading-relaxed mb-8">
+          <p className="mb-8 text-lg leading-relaxed text-[#d7cbc4]">
             At PulseWire, journalists have the freedom, resources, and global
             audience to pursue stories that genuinely matter. If you believe in
             fearless, independent journalism — you belong here.
           </p>
           <a
             href="#openings"
-            className="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-3 rounded-sm transition-colors"
+            className="inline-block rounded-full bg-[#ff6b57] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#f25a45]"
           >
             View Open Positions
           </a>
@@ -214,25 +220,25 @@ export default function CareerPage() {
       {/* Why PulseWire */}
       <section className="container mx-auto max-w-5xl px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="mb-3 text-3xl font-bold text-[#241d1a]">
             Why PulseWire?
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            We've built a newsroom where journalists thrive. Here's what you can
-            expect when you join our team.
+          <p className="mx-auto max-w-xl text-[#6c5f58]">
+            We&apos;ve built a newsroom where journalists thrive. Here&apos;s
+            what you can expect when you join our team.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="bg-white rounded-lg border border-gray-100 p-6 shadow-xs hover:shadow-sm transition-shadow"
+              className="rounded-[26px] border border-[#eadfd4] bg-white/88 p-6 shadow-[0_24px_70px_-55px_rgba(36,29,26,0.38)] transition hover:-translate-y-0.5"
             >
-              <div className="text-blue-600 mb-4">{benefit.icon}</div>
-              <h3 className="font-semibold text-gray-900 mb-2">
+              <div className="mb-4 text-[#ff6b57]">{benefit.icon}</div>
+              <h3 className="mb-2 font-semibold text-[#241d1a]">
                 {benefit.title}
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm leading-relaxed text-[#6c5f58]">
                 {benefit.description}
               </p>
             </div>
@@ -241,13 +247,13 @@ export default function CareerPage() {
       </section>
 
       {/* Open Positions */}
-      <section id="openings" className="bg-gray-50 py-16 px-4">
+      <section id="openings" className="bg-[#fbf6f1] px-4 py-16">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="mb-3 text-3xl font-bold text-[#241d1a]">
               Open Positions
             </h2>
-            <p className="text-gray-500">
+            <p className="text-[#6c5f58]">
               {openings.length} roles available across our global newsroom
             </p>
           </div>
@@ -255,26 +261,26 @@ export default function CareerPage() {
             {openings.map((job) => (
               <div
                 key={job.title}
-                className="bg-white rounded-lg border border-gray-100 p-6 shadow-xs hover:shadow-sm hover:border-blue-200 transition-all group"
+                className="group rounded-[26px] border border-[#eadfd4] bg-white/88 p-6 shadow-[0_24px_70px_-55px_rgba(36,29,26,0.38)] transition hover:-translate-y-0.5 hover:border-[#ff6b57]/30"
               >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap gap-2 mb-3">
                       <span
-                        className={`text-xs font-semibold px-2.5 py-1 rounded-full ${departmentColors[job.department] ?? "bg-gray-100 text-gray-600"}`}
+                        className={`rounded-full px-2.5 py-1 text-xs font-semibold ${departmentColors[job.department] ?? "bg-[#f1ebe4] text-[#6c5f58]"}`}
                       >
                         {job.department}
                       </span>
                       <span
-                        className={`text-xs font-semibold px-2.5 py-1 rounded-full ${typeColors[job.type] ?? "bg-gray-100 text-gray-600"}`}
+                        className={`rounded-full px-2.5 py-1 text-xs font-semibold ${typeColors[job.type] ?? "bg-[#f1ebe4] text-[#6c5f58]"}`}
                       >
                         {job.type}
                       </span>
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-lg mb-1 group-hover:text-blue-600 transition-colors">
+                    <h3 className="mb-1 text-lg font-semibold text-[#241d1a] transition-colors group-hover:text-[#ff6b57]">
                       {job.title}
                     </h3>
-                    <div className="flex items-center gap-1 text-gray-400 text-sm mb-3">
+                    <div className="mb-3 flex items-center gap-1 text-sm text-[#8b7a72]">
                       <svg
                         className="w-4 h-4"
                         fill="none"
@@ -295,13 +301,13 @@ export default function CareerPage() {
                       </svg>
                       {job.location}
                     </div>
-                    <p className="text-sm text-gray-500 leading-relaxed">
+                    <p className="text-sm leading-relaxed text-[#6c5f58]">
                       {job.description}
                     </p>
                   </div>
                   <a
                     href={`mailto:careers@pulsewire.com?subject=Application: ${encodeURIComponent(job.title)}`}
-                    className="shrink-0 self-start border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-medium text-sm px-5 py-2.5 rounded-sm transition-colors"
+                    className="shrink-0 self-start rounded-full border border-[#ff6b57]/40 px-5 py-2.5 text-sm font-medium text-[#ff6b57] transition-colors hover:bg-[#ff6b57] hover:text-white"
                   >
                     Apply
                   </a>
@@ -315,10 +321,10 @@ export default function CareerPage() {
       {/* Hiring Process */}
       <section className="container mx-auto max-w-4xl px-4 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="mb-3 text-3xl font-bold text-[#241d1a]">
             Our Hiring Process
           </h2>
-          <p className="text-gray-500">
+          <p className="text-[#6c5f58]">
             Straightforward, transparent, and respectful of your time.
           </p>
         </div>
@@ -350,13 +356,15 @@ export default function CareerPage() {
               className="relative flex flex-col items-center text-center px-4"
             >
               {i < 3 && (
-                <div className="hidden sm:block absolute top-5 left-[calc(50%+2rem)] right-0 h-px bg-gray-200" />
+                <div className="absolute left-[calc(50%+2rem)] right-0 top-5 hidden h-px bg-[#eadfd4] sm:block" />
               )}
-              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold mb-4 z-10">
+              <div className="z-10 mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#241d1a] text-sm font-bold text-white">
                 {item.step}
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <h3 className="mb-2 font-semibold text-[#241d1a]">
+                {item.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-[#6c5f58]">
                 {item.desc}
               </p>
             </div>
@@ -366,16 +374,18 @@ export default function CareerPage() {
 
       {/* CTA */}
       <section className="mx-4">
-        <div className="container mx-auto max-w-4xl bg-gray-900 rounded-lg text-white text-center py-14 px-8">
-          <h2 className="text-2xl font-bold mb-3">Don't see the right role?</h2>
-          <p className="text-gray-400 mb-7 max-w-lg mx-auto">
-            We're always looking for exceptional journalists and storytellers.
-            Send us your portfolio and tell us how you'd contribute to our
-            newsroom.
+        <div className="container mx-auto max-w-4xl rounded-[28px] bg-[#241d1a] px-8 py-14 text-center text-white shadow-[0_28px_80px_-50px_rgba(36,29,26,0.7)]">
+          <h2 className="text-2xl font-bold mb-3">
+            Don&apos;t see the right role?
+          </h2>
+          <p className="mx-auto mb-7 max-w-lg text-[#d7cbc4]">
+            We&apos;re always looking for exceptional journalists and
+            storytellers. Send us your portfolio and tell us how you&apos;d
+            contribute to our newsroom.
           </p>
           <a
             href="mailto:careers@pulsewire.com"
-            className="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-3 rounded-sm transition-colors"
+            className="inline-block rounded-full bg-[#ff6b57] px-8 py-3 font-semibold text-white transition-colors hover:bg-[#f25a45]"
           >
             Send a Speculative Application
           </a>
