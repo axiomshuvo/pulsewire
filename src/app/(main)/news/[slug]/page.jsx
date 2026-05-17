@@ -61,8 +61,7 @@ export default async function NewsDetailsPage({ params }) {
               >
                 <Button
                   as="span"
-                  radius="full"
-                  className="h-12 bg-[#241d1a] px-6 text-base font-semibold text-white transition hover:bg-[#ff6b57]"
+                  className="h-12 rounded-full bg-[#241d1a] px-6 text-base font-semibold text-white transition hover:bg-[#ff6b57]"
                 >
                   <FaArrowLeft />
                   All news in this category

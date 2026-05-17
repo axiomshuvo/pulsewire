@@ -53,10 +53,7 @@ export default function BreakingNews() {
   return (
     <div className="container mx-auto my-4 px-4">
       <div className="flex flex-col gap-4 rounded-[26px] border border-white/70 bg-white/78 px-5 py-4 shadow-[0_24px_60px_-45px_rgba(36,29,26,0.45)] backdrop-blur md:flex-row md:items-center">
-        <Button
-          radius="full"
-          className="h-11 bg-[#241d1a] px-5 text-sm font-semibold text-white"
-        >
+        <Button className="h-11 rounded-full bg-[#241d1a] px-5 text-sm font-semibold text-white">
           Latest News
         </Button>
         <Marquee

@@ -1,23 +1,39 @@
 # PulseWire
 
-PulseWire is a responsive frontend prototype built with Next.js 16, React 19, and HeroUI. The current implementation focuses on a polished, card-driven landing experience with promotional blocks, community cards, event previews, and product-style callouts. ✨
+PulseWire is a polished editorial-style news website built with Next.js 16, React 19, HeroUI 3, and Tailwind CSS 4. It combines dynamic category pages, article detail pages, authentication screens, metadata-aware routing, and themed loading states inside a cleaner newsroom-inspired UI. 📰
 
-This repository is in an early UI stage, so the README now reflects the code that actually exists today instead of an older news portal brief.
+## Live Demo
+
+- Live site: [https://pulsewire-sooty.vercel.app/](https://pulsewire-sooty.vercel.app/)
+
+## What’s Inside
+
+- Dynamic category browsing with the root route redirecting to `/category/01`
+- News detail pages with route-level metadata generation
+- Custom loading states for category and article routes
+- Dedicated About and Career pages
+- Login and Register pages with HeroUI-based auth layouts
+- Shared editorial shell with polished header, navbar, breaking news strip, and footer
+- Custom 404 page styled to match the main site theme
 
 ## Tech Stack
 
-- Next.js 16
-- React 19
-- HeroUI
+- Next.js 16.2.6
+- React 19.2.4
+- HeroUI 3
 - Tailwind CSS 4
-- ESLint 9
+- React Icons
+- date-fns
 
-## Current Features
+## Routes
 
-- Responsive card-based homepage layout
-- HeroUI components for buttons, cards, avatars, links, and close actions
-- Clean App Router setup under `src/app`
-- Reusable homepage entry through `src/app/home/page.jsx`
+- `/` → redirects to `/category/01`
+- `/category/[id]` → category-specific news feed
+- `/news/[slug]` → full news detail page
+- `/about` → editorial story and team page
+- `/career` → careers and hiring page
+- `/login` → login screen
+- `/register` → registration screen
 
 ## Project Structure
 
@@ -26,9 +42,33 @@ src/
 	app/
 		globals.css
 		layout.js
-		page.js
-		home/
-			page.jsx
+		not-found.js
+		(auth)/
+			layout.jsx
+			login/
+				page.jsx
+			register/
+				page.jsx
+		(main)/
+			layout.jsx
+			page.js
+			about/
+				page.jsx
+			career/
+				page.jsx
+			category/
+				[id]/
+					loading.jsx
+					page.jsx
+			news/
+				[slug]/
+					loading.jsx
+					page.jsx
+	components/
+		homepage/news/
+		shared/
+	lib/
+		dataFetch.js
 ```
 
 ## Getting Started
@@ -65,10 +105,11 @@ npm run lint
 
 ## Notes
 
-- The root route renders the homepage from `src/app/home/page.jsx`.
-- Metadata in `src/app/layout.js` still uses the default starter copy and can be customized next.
-- Several images currently come from external demo assets used by HeroUI examples.
+- The app uses the Next.js App Router.
+- Static pages use page-level metadata, while dynamic routes use `generateMetadata` where needed.
+- HeroUI v3 is used throughout the project, so components should follow the current v3 API.
+- The current visual direction uses a warmer editorial palette rather than generic blue dashboard styling. ✨
 
 ## Credit
 
-Created by [Pradipta Sarker](https://github.com/axiomshuvo).
+Created by [Pradipta Sarker](https://github.com/axiomshuvo) !!!
