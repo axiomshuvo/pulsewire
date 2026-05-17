@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Checkbox,
@@ -37,8 +38,24 @@ export default function RegisterForm() {
     formState: { errors },
   } = useForm();
 
-  const handleRegisterForm = (data) => {
-    console.log("Register form submitted with data:", data);
+  const handleRegisterForm = async (formData) => {
+    console.log("Register form submitted with data:", formData);
+
+    const { data, error } = await authClient.signUp.email({
+      name: formData.fullName,
+      avatar: formData.photoUrl,
+      email: formData.email,
+      password: formData.password,
+      callbackURL: "/",
+    });
+
+    if (error) {
+      alert(`Registration error: ${error?.message || "Something went wrong"}`);
+      return;
+    }
+
+    alert(`Registration successful: ${formData.email}`);
+    console.log("Sign-up response:", { data, error });
   };
 
   console.log("Register form errors:", errors);
@@ -98,7 +115,6 @@ export default function RegisterForm() {
           </TextField>
 
           <TextField
-            isRequired
             className="flex flex-col gap-2"
             isInvalid={Boolean(errors.photoUrl)}
             name="photoUrl"
@@ -111,17 +127,7 @@ export default function RegisterForm() {
               Photo URL
             </Label>
             <Input
-              {...register("photoUrl", {
-                required: "Photo URL is required",
-                validate: (value) => {
-                  try {
-                    new URL(value);
-                    return true;
-                  } catch {
-                    return "Enter a valid photo URL";
-                  }
-                },
-              })}
+              {...register("photoUrl")}
               aria-invalid={Boolean(errors.photoUrl)}
               className={getInputClassName(Boolean(errors.photoUrl))}
               placeholder="https://example.com/profile.jpg"

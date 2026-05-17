@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import {
   Button,
   Description,
@@ -36,8 +37,14 @@ export default function LoginForm() {
     formState: { errors },
   } = useForm();
 
-  const handleLoginForm = (data) => {
-    console.log("Login form submitted with data:", data);
+  const handleLoginForm = async (formData) => {
+    console.log("Login form submitted with data:", formData);
+    const { data, error } = await authClient.signIn.email({
+      email: formData.email, // required
+      password: formData.password, // required
+      rememberMe: true,
+      callbackURL: "/dashboard",
+    });
   };
 
   console.log("Login form errors:", errors);
