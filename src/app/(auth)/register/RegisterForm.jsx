@@ -41,20 +41,25 @@ export default function RegisterForm() {
   const handleRegisterForm = async (formData) => {
     console.log("Register form submitted with data:", formData);
 
+    const redirectPath = "/dashboard";
+
     const { data, error } = await authClient.signUp.email({
       name: formData.fullName,
-      avatar: formData.photoUrl,
       email: formData.email,
       password: formData.password,
-      callbackURL: "/",
+      image: formData.photoUrl || undefined,
+      callbackURL: redirectPath,
     });
 
     if (error) {
       alert(`Registration error: ${error?.message || "Something went wrong"}`);
       return;
     }
+    if (data) {
+      alert("Registration successful!");
+      window.location.assign(redirectPath);
+    }
 
-    alert(`Registration successful: ${formData.email}`);
     console.log("Sign-up response:", { data, error });
   };
 
