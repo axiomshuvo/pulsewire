@@ -7,10 +7,29 @@ import Link from "next/link";
 import { RiLoginBoxFill } from "react-icons/ri";
 import Navlink from "./Navlink";
 
+const getSafeAvatarSrc = (imageSrc) => {
+  if (!imageSrc || typeof imageSrc !== "string") {
+    return null;
+  }
+
+  if (imageSrc.startsWith("/")) {
+    return imageSrc;
+  }
+
+  try {
+    const imageUrl = new URL(imageSrc);
+
+    return imageUrl.protocol === "https:" ? imageSrc : null;
+  } catch {
+    return null;
+  }
+};
+
 export default function Navbar() {
-  const { data: session } = authClient.useSession();
+  const { data: session, isPending } = authClient.useSession();
 
   const user = session?.user;
+  const avatarSrc = getSafeAvatarSrc(user?.image);
 
   console.log("Session data in Navbar:", user);
 
@@ -25,15 +44,17 @@ export default function Navbar() {
         <Navlink />
 
         <nav className="flex min-w-33 items-center justify-center gap-3 md:justify-end">
-          {user ? (
+          {isPending ? (
+            <div className="h-11 w-11 animate-spin rounded-full border-2 border-[#ff6b57] border-t-transparent" />
+          ) : user ? (
             <>
               <Link
                 href="/dashboard"
                 className="inline-flex h-11 items-center gap-2 rounded-full bg-[#241d1a] px-4 text-sm font-semibold text-white transition hover:bg-[#ff6b57]"
               >
-                {user.image ? (
+                {avatarSrc ? (
                   <Image
-                    src={user.image}
+                    src={avatarSrc}
                     alt={`${user.name}'s avatar`}
                     className="h-7 w-7 rounded-full object-cover ring-2 ring-white/20"
                     width={28}
@@ -44,7 +65,7 @@ export default function Navbar() {
                     <RiLoginBoxFill className="text-sm" />
                   </span>
                 )}
-                <span className="max-w-[120px] truncate">{user.name}</span>
+                <span className="max-w-30 truncate">{user.name}</span>
               </Link>
 
               <button

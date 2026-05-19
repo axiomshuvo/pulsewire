@@ -7,11 +7,14 @@ import {
   Fieldset,
   Form,
   Input,
+  InputGroup,
   Label,
   TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { RiArrowRightLine } from "react-icons/ri";
 
 const fieldClassNames = {
@@ -22,15 +25,28 @@ const fieldClassNames = {
   desktopDescription: "hidden text-xs leading-6 text-[#8b7a72] sm:block",
   input:
     "h-14 rounded-2xl border border-[#eadfd4] bg-white px-4 text-sm font-medium text-[#241d1a] shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] placeholder:text-[#aa9b92] transition duration-200 focus:border-[#ff6b57] focus:outline-none focus:ring-4 focus:ring-[#ff6b57]/10",
+  inputGroup:
+    "h-14 rounded-2xl border border-[#eadfd4] bg-white text-[#241d1a] shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] transition duration-200 focus-within:border-[#ff6b57] focus-within:ring-4 focus-within:ring-[#ff6b57]/10",
+  inputGroupField:
+    "px-4 text-sm font-medium text-[#241d1a] placeholder:text-[#aa9b92]",
   errorInput:
     "border-[#d15b49] bg-[#fff4f1] focus:border-[#d15b49] focus:ring-[#d15b49]/10",
+  errorInputGroup:
+    "border-[#d15b49] bg-[#fff4f1] focus-within:border-[#d15b49] focus-within:ring-[#d15b49]/10",
   errorText: "text-sm text-[#d15b49]",
 };
 
 const getInputClassName = (hasError) =>
   `${fieldClassNames.input} ${hasError ? fieldClassNames.errorInput : ""}`;
 
+const getInputGroupClassName = (hasError) =>
+  `${fieldClassNames.inputGroup} ${
+    hasError ? fieldClassNames.errorInputGroup : ""
+  }`;
+
 export default function LoginForm() {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -93,6 +109,7 @@ export default function LoginForm() {
               aria-invalid={Boolean(errors.email)}
               className={getInputClassName(Boolean(errors.email))}
               placeholder="name@pulsewire.com"
+              type="email"
               variant="secondary"
             />
             <Description className={fieldClassNames.desktopDescription}>
@@ -108,7 +125,6 @@ export default function LoginForm() {
             className="flex flex-col gap-2"
             isInvalid={Boolean(errors.password)}
             name="password"
-            type="password"
           >
             <Label
               className={fieldClassNames.label}
@@ -116,15 +132,42 @@ export default function LoginForm() {
             >
               Password
             </Label>
-            <Input
-              {...register("password", {
-                required: "Password is required",
-              })}
-              aria-invalid={Boolean(errors.password)}
-              className={getInputClassName(Boolean(errors.password))}
-              placeholder="Enter your password"
+            <InputGroup
+              className={getInputGroupClassName(Boolean(errors.password))}
               variant="secondary"
-            />
+            >
+              <InputGroup.Input
+                {...register("password", {
+                  required: "Password is required",
+                })}
+                aria-invalid={Boolean(errors.password)}
+                className={fieldClassNames.inputGroupField}
+                placeholder="Enter your password"
+                type={isPasswordVisible ? "text" : "password"}
+              />
+              <InputGroup.Suffix>
+                <Button
+                  isIconOnly
+                  type="button"
+                  aria-label={
+                    isPasswordVisible ? "Hide password" : "Show password"
+                  }
+                  className="h-10 w-10 text-[#8b7a72] transition hover:text-[#241d1a]"
+                  size="sm"
+                  variant="ghost"
+                  onPress={() =>
+                    setIsPasswordVisible((isVisible) => !isVisible)
+                  }
+                >
+                  {isPasswordVisible ? (
+                    <IoEyeOffOutline className="size-4" />
+                  ) : (
+                    <IoEyeOutline className="size-4" />
+                  )}
+                </Button>
+              </InputGroup.Suffix>
+            </InputGroup>
+
             <Description className={fieldClassNames.compactDescription}>
               Enter the password you created for this account.
             </Description>

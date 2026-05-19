@@ -87,6 +87,10 @@ const quickActions = [
 ];
 
 export default function DashBoardPage() {
+  // const { data: session } = authClient.useSession();
+
+  // console.log("Session data in DashboardPage:", session);
+
   return (
     <main className="relative isolate overflow-hidden px-4 py-8 md:py-12">
       <div
