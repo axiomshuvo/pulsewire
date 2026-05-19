@@ -71,7 +71,7 @@ export default function Navbar() {
               <button
                 onClick={async () => {
                   await authClient.signOut();
-                  window.location.href = "/";
+                  window.location.replace("/");
                 }}
                 className="inline-flex h-11 items-center justify-center rounded-full border border-[#eadfd4] bg-white px-4 text-sm font-semibold text-[#6c5f58] transition hover:border-[#ff6b57]/30 hover:text-[#ff6b57]"
               >

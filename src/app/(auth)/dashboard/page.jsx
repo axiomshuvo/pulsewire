@@ -1,4 +1,7 @@
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
   RiArrowRightLine,
   RiBookmarkLine,
@@ -86,10 +89,22 @@ const quickActions = [
   },
 ];
 
-export default function DashBoardPage() {
-  // const { data: session } = authClient.useSession();
+export default async function DashBoardPage() {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
 
-  // console.log("Session data in DashboardPage:", session);
+  if (!session) {
+    redirect("/login");
+  }
+
+  const userName = session.user.name || "Reader";
+  const userInitials = userName
+    .split(" ")
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 
   return (
     <main className="relative isolate overflow-hidden px-4 py-8 md:py-12">
@@ -151,12 +166,12 @@ export default function DashBoardPage() {
                   Profile Snapshot
                 </span>
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-sm font-bold">
-                  PS
+                  {userInitials}
                 </span>
               </div>
 
               <h2 className="mt-6 text-2xl font-semibold tracking-tight">
-                Pradipta Sarker
+                {userName}
               </h2>
               <p className="mt-2 text-sm leading-7 text-[#d7c8c1]">
                 Reader profile active with custom story tracking and briefing
